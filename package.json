@@ -15,7 +15,7 @@
     "build-dev": "npm-run-all build-dev:sass build:autoprefixer",
     "build-dev:sass": "sass --style=expanded --source-map sass:css",
     "watch": "npm-run-all build build-dev -p watch:*",
-    "watch:browsersync": "browser-sync start --server --files \"css/*.css\" \"*.html\"",
+    "watch:browsersync": "browser-sync start --server --files \"css/*.css\" \"*.html\" \"js/*.js\"",
     "watch:sassprefixer": "onchange sass/*.scss -- npm run build-dev"
   },
   "keywords": [],
@@ -29,8 +29,9 @@
     "mkdirp": "^3.0.1",
     "npm-run-all": "^4.1.5",
     "onchange": "^7.1.0",
-    "postcss": "^8.2.6",
+    "postcass": "^8.2.6",
     "postcss-cli": "^8.3.1",
     "sass": "^1.81.0"
   }
+
 }
