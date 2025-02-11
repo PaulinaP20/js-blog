@@ -29,9 +29,8 @@
     "mkdirp": "^3.0.1",
     "npm-run-all": "^4.1.5",
     "onchange": "^7.1.0",
-    "postcass": "^8.2.6",
+    "postcss": "^8.2.6",
     "postcss-cli": "^8.3.1",
     "sass": "^1.81.0"
   }
-
 }
