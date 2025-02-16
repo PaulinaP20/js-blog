@@ -16,12 +16,28 @@ $font-text: 'Source Sans Pro', sans-serif;
 }
 
 body {
-  background: $color-light;
+  border:solid black;
+  margin:0;
+  position: relative;
+  background-image: url('../images/pexels-bohlemedia-2803160.jpg');
+  background-attachment: fixed;
+  background-size: cover;
   font-family: $font-text;
   color: $color-dark;
   font-weight: 300;
   font-size: 16px;
   line-height: 1.7;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
 }
 
 .container {
@@ -53,7 +69,8 @@ body {
 }
 
 .posts {
-  flex: 2 0 0;
+  position:relative;
+  width:50%;
 }
 
 .sidebar, .posts {
@@ -62,6 +79,7 @@ body {
   padding: 40px;
   border: 1px solid $color-dark;
   border-radius: 5px;
+  height:750px;
 }
 
 /* Logo */
@@ -72,6 +90,7 @@ body {
   font-size: 104px;
   line-height: 1;
   text-align: center;
+  color:$color-light;
 }
 
 /* Lists */
@@ -85,6 +104,17 @@ body {
   }
 }
 
+.titles li {
+  list-style-type:decimal;
+  padding-bottom:12px;
+  a {
+    text-decoration: none;
+    color:black;
+
+  }
+}
+
+
 .list-horizontal {
   li {
     display: inline-block;
@@ -96,30 +126,64 @@ body {
 .authors {
   li {
     margin-bottom: 12px;
+
+    a {
+      text-decoration: none;
+      color:black;
+    }
   }
 }
 
 /* Post */
 
 .post {
-  display: none;
+  position:absolute;
+  opacity:0;
+  transform:translateY(20px);
+  transition:opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  visibility:hidden;
   &.active {
+    margin-right:15px;
     display: block;
+    opacity:1;
+    transform:translateY(0);
+    visibility:visible;
   }
+
 }
 
 .post-author {
   font-style: italic;
+  list-style-type: none;
+  a {
+    text-decoration: none;
+    color:black;
+
+  }
 }
 
 .post-tags {
   display: flex;
+
+  ul li{
+    margin-right:10px;
+  }
+
   p {
     margin: 0 10px 0 0;
+  }
+
+  a {
+    color:black;
+    text-decoration:none;
   }
 }
 
 /* Tags list */
+
+.tags {
+  padding-bottom:100px;
+}
 
 .tags li{
   display:inline-block;
@@ -155,6 +219,8 @@ body {
   font-size:20px;
   color:#00308F;
 }
+
+
 
 
 
