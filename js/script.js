@@ -181,9 +181,6 @@ function generateTags(){
     const allTagsData={tags:[]};
     /*start loop: for each tag in alltags:*/
     for (let tag in allTags){
-      const tagLinkHTML=calculateTagClass(allTags[tag],tagsParams);
-      //console.log('tagLinkHTML: ', tagLinkHTML);
-
       allTagsData.tags.push({
         tag:tag,
         count:allTags[tag],
@@ -280,7 +277,7 @@ function generateAuthors(){
     html=html+linkHTML;
     authorWrapper.innerHTML=html;
 
-    if(!allAuthors.hasOwnProperty(author)){
+    if(!Object.prototype.hasOwnProperty.call(allAuthors, author)){
       allAuthors[author]=1;
     } else {
       allAuthors[author]++
